@@ -1,0 +1,87 @@
+{{!--
+Citation for the following code:
+Date: 02/28/2025
+Adapted from Node.JS starter guide
+https://github.com/osu-cs340-ecampus/nodejs-starter-app --}}
+
+<h2>Invoice Items</h2>
+
+{{!-- DISPLAY all invoice items in the InvoiceItems table --}}
+<div class="table-container">
+<table id="invoice-items-table" class="display-table">
+    <thead>
+        <tr>
+            <th>Invoice Item ID</th>
+            <th>Item</th>
+            <th>Invoice</th>
+            <th>Order Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each data}}
+        <tr data-value={{this.invoiceItemID}}>
+            <td style="text-align: right;">{{this.invoiceItemID}}</td>
+            <td>{{this.itemID}}</td>
+            <td>{{this.invoiceID}}</td>
+            <td style="text-align: right;">{{this.orderQuantity}}</td>
+            <td><button onclick="deleteInvoiceItem({{this.invoiceItemID}})" class="delete-button">Delete</button></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</div>
+<script src="./js/delete_invoice_item.js"></script>
+
+{{!-- ADD a new invoice item to the InvoiceItems table  --}}
+<form id="add-invoice-item-form-ajax">
+    <fieldset class="form-fillable">
+        <legend><strong>Add an Invoice Item</strong></legend>
+        <p>To add a new invoice item, please enter its information below and click Add.</p>
+        <p>
+            <label for="input-item-id">Item: </label>
+            <select name="input-item-id" id="input-item-id">
+                <option value="">Select an Item</option>
+                {{#each items}}
+                <option value="{{this.itemID}}">{{this.name}}</option>
+                {{/each}}
+            </select>
+
+            <label for="input-invoice-id">Invoice: </label>
+            <select name="input-invoice-id" id="input-invoice-id">
+                <option value="">Select an Invoice</option>
+                {{#each invoices}}
+                <option value="{{this.invoiceID}}">{{this.saleDate}}</option>
+                {{/each}}
+            </select>
+
+            <label for="input-order-quantity">Order Quantity: </label>
+            <input type="number" name="input-order-quantity" id="input-order-quantity" step="1">
+
+            <input type="submit" value="Add" class="form-button">
+        </p>
+    </fieldset>
+</form>
+<script src="./js/add_invoice_item.js"></script>
+
+{{!-- UPDATE an invoice item's order quantity in the InvoiceItems table  --}}
+<form id="update-invoice-item-form-ajax">
+    <fieldset class="form-fillable">
+        <legend><strong>Update an Invoice Items's Quantity</strong></legend>
+        <p>To update an invoice item's order quantity, select the item / invoice from the dropdown menu, enter the order quantity and click Update.</p>
+        <p>
+            <label for="selected-invoice-item">Invoice Item: </label>
+            <select name="input-invoice-item" id="selected-invoice-item">
+                <option value="test">Select an Invoice Item</option>
+                {{#each data}}
+                <option value="{{this.invoiceItemID}}">{{this.itemID}} / {{this.invoiceID}}</option>
+                {{/each}}
+            </select>
+
+            <label for="input-order-quantity-update">Order Quantity: </label>
+            <input type="number" name="input-order-quantity" id="input-order-quantity-update" step="1">
+
+            <input type="submit" value="Update" class="form-button">
+        </p>
+    </fieldset>
+</form>
+<script src="./js/update_invoice_item.js"></script>
