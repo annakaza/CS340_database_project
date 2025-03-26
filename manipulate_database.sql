@@ -1,6 +1,8 @@
--- Group 129, Project Step 3
+-- Project: Natura Cafe Sales and Operations Database Management System
 -- Database Manipulation queries
 
+-- Below are the sample data manipulation queries for the Natura Sales and Operations Management System,
+-- which reflect the operations implemented in the server-side code
 
 --
 -- CUSTOMERS Queries
