@@ -1,5 +1,5 @@
--- Group 129
--- CS340 Portfolio Project: Natura Sales and Operations Management System Database Definition Queries
+-- Project: Natura Cafe Sales and Operations Database Management System
+-- Database Definition Queries
 
 -- Below are the data definition queries for the Natura Sales and Operations Management System which
 -- describes the structure the following entities: Customers, Employees, Items, Invoices, InvoiceItems,
