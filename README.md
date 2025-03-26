@@ -1,9 +1,6 @@
 # CS340 Project: Natura Cafe Sales and Operations Management System
 
-Portfolio Project for Group 129
-Team Members:
-- Ethan Duke, Team Leader / Database Designer
-- Anna Kaza, Lead Researcher / Project Manager
+Portfolio Project for Anna Kaza and Ethan Duke
 
 The Natura Cafe Sales and Operations Management System is a database designed for a modestly-sized, major University-adjacent cafe which processes approx. 150 daily customer transactions and typically generates approximately $450,000 in gross earnings each year. To help further this institution's growth and analytics as well as track day-to-day business such as hiring and invoicing, this database features entities to track the business's employees, their roles, frequent customers, menu items, invoices, and a M:N transaction table to facilitate the relationship between an invoice and the items on it. With this database, Natura will be better positioned to streamline their operations, optimize its menu, and scale its business effectively while maintaining high levels of customer satisfaction.
 
